@@ -9,7 +9,7 @@ class Calculator {
 
   add(...nums) {
     if (this.isValid(nums)) {
-      return nums.reduce((a, b) => a + b);
+      return nums.reduce((a, b) => a + b, 0);
     }
     return this.throwError();
   }
@@ -23,7 +23,7 @@ class Calculator {
 
   divide(num1, num2) {
     if (this.isValid([num1, num2])) {
-      if (num1 > 0 && num2 > 0) {
+      if (num2 > 0) {
         return num1 / num2;
       }
       return this.throwError('Can not divide by 0');
